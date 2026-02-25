@@ -1,0 +1,123 @@
+{
+  "stories": [
+    {
+      "id": "elevator13",
+      "title": "The Elevator That Skips 13",
+      "category": "mystery",
+      "tags": ["#LockedRoom", "#Corporate", "#TwistEnding"],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "text": "You press L. The display flickers… 13.\nThe doors open to a corridor.\nA plaque reads: YOUR NAME.",
+          "backgroundImage": "scenes/mystery/elevator13_n1.webp",
+          "choices": [
+            { "id": "c1", "text": "Step out carefully", "toNodeId": "n2" },
+            { "id": "c2", "text": "Hit Door Close and press L again", "toNodeId": "n3" },
+            { "id": "c3", "text": "Use the emergency intercom", "toNodeId": "n4" }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "The carpet is dry. The air is cold. Every door is shut.\nYour phone has no signal.",
+          "choices": [
+            { "id": "c4", "text": "Walk to the door with your name", "toNodeId": "n5" },
+            { "id": "c5", "text": "Try the nearest door", "toNodeId": "n6" }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "The doors try to close… then stop.\nSomething blocks them from the other side.",
+          "choices": [
+            { "id": "c6", "text": "Force the doors open", "toNodeId": "n2" },
+            { "id": "c7", "text": "Back away", "toNodeId": "n4" }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "A calm voice says: “Do not exit on unauthorized floors.”\nThen it whispers: “It already knows you.”",
+          "choices": [
+            { "id": "c8", "text": "Exit anyway", "toNodeId": "n2" },
+            { "id": "c9", "text": "Stay inside and wait", "toNodeId": "end_bad" }
+          ]
+        },
+        { "id": "end_bad", "text": "You wait. The elevator never returns.\nSome floors don’t go up.", "endingTitle": "Ending: The Wait" },
+        { "id": "end_twist", "text": "The tape shows you exiting on 13… yesterday.\nYou just didn’t remember it.", "endingTitle": "Ending: Déjà Vu" },
+        {
+          "id": "n5",
+          "text": "The door opens to your exact desk…\nBut the monitor shows a live feed of you standing there.",
+          "choices": [
+            { "id": "c10", "text": "Look at the feed closely", "toNodeId": "end_twist" },
+            { "id": "c11", "text": "Run back to the elevator", "toNodeId": "end_bad" }
+          ]
+        },
+        {
+          "id": "n6",
+          "text": "Inside is a small security room.\nA tape labeled TODAY is already rewound.",
+          "choices": [
+            { "id": "c12", "text": "Play the tape", "toNodeId": "end_twist" },
+            { "id": "c13", "text": "Leave it and go back", "toNodeId": "n5" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "lastlie",
+      "title": "The Last Lie You’ll Ever Tell",
+      "category": "mind",
+      "tags": ["#Ethics", "#Family", "#Guilt"],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "text": "A message arrives:\n“One lie. Perfectly delivered. Your mother’s bill disappears.”",
+          "choices": [
+            { "id": "c1", "text": "Meet the sender", "toNodeId": "n2" },
+            { "id": "c2", "text": "Delete it", "toNodeId": "end_safe" }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "The handler slides a file:\n“Pick your target.”",
+          "choices": [
+            { "id": "c3", "text": "Frame an innocent coworker", "toNodeId": "end_dark" },
+            { "id": "c4", "text": "Frame a corrupt executive", "toNodeId": "end_clean" }
+          ]
+        },
+        { "id": "end_safe", "text": "You delete the message.\nThe hospital calls anyway.", "endingTitle": "Ending: The Ordinary" },
+        { "id": "end_dark", "text": "The lie works. The bill disappears.\nSo does your coworker’s future.", "endingTitle": "Ending: Paid in Blood" },
+        { "id": "end_clean", "text": "The executive falls.\nYou feel… nothing.\nThat scares you most.", "endingTitle": "Ending: Clean Cut" }
+      ]
+    },
+
+    {
+      "id": "blackbloom",
+      "title": "Black Bloom on Deck 7",
+      "category": "scifi",
+      "tags": ["#DarkSpace", "#Alien", "#Consequences"],
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "text": "Deck 7 ventilation coughs out black pollen.\nA flower‑shape pulses like it’s listening.",
+          "choices": [
+            { "id": "c1", "text": "Report it to ship AI", "toNodeId": "n2" },
+            { "id": "c2", "text": "Hide it and study it", "toNodeId": "end_known" }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "The AI asks:\n“Do you regret your last command?”",
+          "choices": [
+            { "id": "c3", "text": "Tell the truth", "toNodeId": "end_fire" },
+            { "id": "c4", "text": "Lie", "toNodeId": "end_void" }
+          ]
+        },
+        { "id": "end_fire", "text": "You burn it.\nThe smell is sweet—wrongly sweet.\nThe ship survives.", "endingTitle": "Ending: Ashes" },
+        { "id": "end_void", "text": "You vent Deck 7.\nSpace drinks the screaming.\nThe bloom drifts… and blooms.", "endingTitle": "Ending: The Void" },
+        { "id": "end_known", "text": "You confess your deepest regret.\nThe bloom opens like an eye.\nIt learns you.", "endingTitle": "Ending: Known" }
+      ]
+    }
+  ]
+}
